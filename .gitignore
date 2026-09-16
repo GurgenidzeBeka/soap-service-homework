@@ -37,3 +37,15 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+target/
+build/
+.idea/
+*.iml
+.vscode/
+
+
+# Ignore generated Allure test reports
+allure-results/
+allure-report/
+.allure/
