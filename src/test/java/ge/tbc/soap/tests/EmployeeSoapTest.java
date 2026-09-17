@@ -2,7 +2,7 @@ package ge.tbc.soap.tests;
 
 
 import com.example.springboot.soap.interfaces.*;
-import ge.tbc.soap.utils.EmployeeSoapClient;
+import ge.tbc.soap.client.EmployeeSoapClient;
 import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;

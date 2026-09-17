@@ -1,4 +1,4 @@
-package ge.tbc.soap.utils;
+package ge.tbc.soap.client;
 
 import com.example.springboot.soap.interfaces.*;
 import ge.tbc.soap.utils.Marshall;
