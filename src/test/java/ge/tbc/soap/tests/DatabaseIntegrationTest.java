@@ -20,7 +20,7 @@ public class DatabaseIntegrationTest {
 
     @BeforeClass
     public void generateTestData() {
-        long dynamicId = System.currentTimeMillis() % 100000L;
+        long dynamicId = System.currentTimeMillis();
 
         sharedTestEmployee = new Employee();
         sharedTestEmployee.setEmployeeId(dynamicId);

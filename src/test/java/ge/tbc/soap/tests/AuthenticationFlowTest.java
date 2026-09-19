@@ -36,7 +36,7 @@ public class AuthenticationFlowTest {
         uniqueEmail = "user" + timestamp + "@tbc.ge";
 
         Employee coreEmployee = new Employee();
-        coreEmployee.setEmployeeId(timestamp % 100000L);
+        coreEmployee.setEmployeeId(timestamp);
         coreEmployee.setName(AUTH_FIRST_NAME);
         coreEmployee.setDepartment(AUTH_DEPT);
         coreEmployee.setPhone(AUTH_PHONE);

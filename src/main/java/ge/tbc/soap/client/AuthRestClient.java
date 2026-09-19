@@ -1,33 +1,34 @@
 package ge.tbc.soap.client;
 
 import ge.tbc.soap.models.rest.*;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
 
+import static ge.tbc.soap.data.Constants.REST_AUTH_BASE_URL;
 import static io.restassured.RestAssured.given;
 
 public class AuthRestClient {
 
-    private static final String BASE_URL = "http://localhost:8086";
+    // Centralize standard headers and URL
+    private final RequestSpecification baseSpec = new RequestSpecBuilder()
+            .setBaseUri(REST_AUTH_BASE_URL)
+            .setContentType(ContentType.JSON)
+            .build();
 
     public AuthenticationResponse registerUser(RegisterUserRequest request) {
-        return given()
-                .log().all() // <-- ADD THIS
-                .baseUri(BASE_URL)
-                .contentType(ContentType.JSON)
+        return given().spec(baseSpec)
                 .body(request)
                 .when()
                 .post("/api/v1/auth/register")
                 .then()
-                .log().all() // <-- ADD THIS
                 .statusCode(200)
                 .extract()
                 .as(AuthenticationResponse.class);
     }
 
     public AuthenticationResponse authenticateUser(LoginRequest request) {
-        return given()
-                .baseUri(BASE_URL)
-                .contentType(ContentType.JSON)
+        return given().spec(baseSpec)
                 .body(request)
                 .when()
                 .post("/api/v1/auth/authenticate")
@@ -38,9 +39,7 @@ public class AuthRestClient {
     }
 
     public void changeEmail(ChangeEmailRequest request, String bearerToken) {
-        given()
-                .baseUri(BASE_URL)
-                .contentType(ContentType.JSON)
+        given().spec(baseSpec)
                 .header("Authorization", "Bearer " + bearerToken)
                 .body(request)
                 .when()

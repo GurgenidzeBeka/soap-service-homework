@@ -76,4 +76,7 @@ public class Constants {
     public static final String LOGIN_TOKEN_MSG = "Login should return a valid Bearer token";
     public static final String SOAP_EMAIL_UPDATE_MSG = "SOAP should return the updated email";
     public static final String FIRST_NAME_UNCHANGED_MSG = "First name should remain unchanged";
+
+
+    public static final String REST_AUTH_BASE_URL = "http://localhost:8086";
 }
