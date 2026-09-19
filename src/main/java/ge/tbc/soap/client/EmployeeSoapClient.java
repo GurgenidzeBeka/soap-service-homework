@@ -41,4 +41,20 @@ public class EmployeeSoapClient {
         String requestBody = Marshall.marshallSoapRequest(request);
         return SoapServiceSender.send(EMPLOYEE_SERVICE_URL, EMPTY_SOAP_ACTION, requestBody);
     }
+
+
+    public GetEmployeeByIdResponse getEmployeeByEmail(String email) {
+        GetEmployeeByEmailRequest request = factory.createGetEmployeeByEmailRequest().withEmail(email);
+        String requestBody = Marshall.marshallSoapRequest(request);
+        Response response = SoapServiceSender.send(EMPLOYEE_SERVICE_URL, EMPTY_SOAP_ACTION, requestBody);
+
+        GetEmployeeByEmailResponse emailResponse = Unmarshall.unmarshallResponse(response.asString(), GetEmployeeByEmailResponse.class);
+
+        GetEmployeeByIdResponse standardResponse = new GetEmployeeByIdResponse();
+        standardResponse.setEmployeeInfo(emailResponse.getEmployeeInfo());
+        return standardResponse;
+    }
+
+
+
 }

@@ -2,6 +2,7 @@ package ge.tbc.soap.data;
 
 
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Constants {
@@ -43,4 +44,36 @@ public class Constants {
     public static final String TWO_UPPERCASE_LETTERS_REGEX = "^[A-Z]{2}$";
     public static final String CONTENT_ADDED_SUCCESSFULLY = "Content Added Successfully";
     public static final String EMPTY_SOAP_ACTION = "";
+
+
+
+
+    public static final String DEFAULT_EMP_NAME = "Shota Rustaveli";
+    public static final String DEFAULT_EMP_PHONE = "555-1234";
+    public static final String DEFAULT_EMP_ADDRESS = "Tbilisi, Georgia";
+
+    public static final String INIT_DEPT = "Finance";
+    public static final String UPDATED_DEPT = "Literature";
+    public static final String FINAL_DEPT = "History";
+
+    public static final BigDecimal INIT_SALARY = new BigDecimal("5000.00");
+    public static final BigDecimal UPDATED_SALARY = new BigDecimal("8000.00");
+    public static final BigDecimal FINAL_SALARY = new BigDecimal("9500.00");
+
+
+    public static final String EMP_DELETED_MSG = "Employee should be deleted from DB";
+
+
+
+    public static final String AUTH_FIRST_NAME = "Ilia";
+    public static final String AUTH_LAST_NAME = "Chavchavadze";
+    public static final String AUTH_PASSWORD = "SecurePassword123!";
+    public static final String AUTH_DEPT = "IT";
+    public static final String AUTH_PHONE = "555-9999";
+    public static final BigDecimal AUTH_SALARY = new BigDecimal("4000.00");
+
+    public static final String REG_TOKEN_MSG = "Registration should return a token";
+    public static final String LOGIN_TOKEN_MSG = "Login should return a valid Bearer token";
+    public static final String SOAP_EMAIL_UPDATE_MSG = "SOAP should return the updated email";
+    public static final String FIRST_NAME_UNCHANGED_MSG = "First name should remain unchanged";
 }
